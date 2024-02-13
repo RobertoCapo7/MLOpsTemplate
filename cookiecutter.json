@@ -1,0 +1,12 @@
+{
+  "nome_progetto": "",
+  "descrizione_progetto": "",
+  "versione_progetto": "",
+  "configurazione_git": "Vuoi configurare git? [si|no]:",
+  "autore_progetto": "[Nome_autore/Username_GitHub]",
+  "email_autore": "[Email/Email_GitHub]",
+  "repository_url": "",
+  "data_directory": "",
+  "data_dir": "",
+	"data_directory_name": "DATASCI"
+}
