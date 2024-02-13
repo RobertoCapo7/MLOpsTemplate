@@ -25,7 +25,7 @@ for var in configurazione_git repository_url author author_email data_dir data_d
     check_empty $var
 done
 
-if configurazione_git == "si";
+if [ "$configurazione_git" = "si" ];
     then
     git init
 
