@@ -1,7 +1,7 @@
 # Template MLOps
 _Il seguente repository contiene un template per progetti di Digital Health. Attraverso l'utilizzo di Cookiecutter, si mira a fornire una struttura standardizzata che faciliti la creazione di nuovi progetti. Il template sviluppato include le pratiche di MLOps, garantendo la gestione efficace del ciclo di vita dei modelli di Machine Learning. L’obiettivo principale è quello di rendere accessibile la creazione di progetti di Digital Health anche a coloro che potrebbero non essere esperti in MLOps, fornendo un framework flessibile che si adatta a diverse esigenze._
 
-## Struttura della directory
+## Struttura della repository
 ```
 ├── {{cookiecutter.nome_progetto}}    <- Directory principale del progetto.
 │    ├── conf               <- Directory con file di configurazione.
