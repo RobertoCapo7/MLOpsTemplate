@@ -1,7 +1,6 @@
 ---
 # Consulta il seguente link per i metadati che possono essere aggiunti: https://github.com/huggingface/hub-docs/blob/main/datasetcard.md?plain=1
 # Documentazione/Guida: https://huggingface.co/docs/hub/datasets-cards
-{{ card_data }}
 ---
 
 # Dataset Card for {{ pretty_name | default("Dataset Name", true) }}

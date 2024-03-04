@@ -1,7 +1,6 @@
 ---
 # Consulta il seguente link per i metadati che possono essere aggiunti: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1
 # Documentazione/Guida: https://huggingface.co/docs/hub/model-cards
-{{ card_data }}
 ---
 
 # Model Card for {{ model_id | default("Model ID", true) }}
