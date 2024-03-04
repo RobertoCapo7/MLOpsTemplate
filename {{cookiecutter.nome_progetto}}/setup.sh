@@ -19,13 +19,14 @@ check_empty() {
     fi
 }
 
-for var in configurazione_git repository_url autore email_autore data_dir data_directory_name; do
+for var in configurazione_git configurazione_DVC repository_url autore email_autore data_dir data_directory_name; do
     check_empty $var
 done
 
+git init
+
 if [ "$configurazione_git" = "si" ];
     then
-    git init
 
     git config user.name "{{cookiecutter.autore_progetto}}"
     git config user.email "{{cookiecutter.email_autore}}"
@@ -42,7 +43,7 @@ if [ "$configurazione_git" = "si" ];
     git push origin HEAD
     fi
 
-if [ "$configurazione_DCV" = "si" ];
+if [ "$configurazione_DVC" = "si" ];
     then
     dvc init
     fi
