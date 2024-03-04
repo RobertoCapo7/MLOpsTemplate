@@ -2,26 +2,24 @@
 
 configurazione_git="{{cookiecutter.configurazione_git}}"
 repository_url="{{cookiecutter.repository_url}}"
-author="{{cookiecutter.autore_progetto}}"
-author_email="{{cookiecutter.email_autore}}"
+autore="{{cookiecutter.autore_progetto}}"
+email_autore="{{cookiecutter.email_autore}}"
 data_dir="{{cookiecutter.data_dir}}"
 data_directory_name="{{cookiecutter.data_directory_name}}"
+configurazione_DVC="{{cookiecutter.configurazione_DVC}}"
 
-# Function to check if a variable is empty
 check_empty() {
     var_name=$1
     eval var_value=\$$var_name
 
     if [ -z "$var_value" ]; then
-        echo "$var_name is empty"
+        echo "Errore! La variabile $var_name è vuota!"
         exit 1
-    else
-        echo "$var_name has the value: $var_value"
+
     fi
 }
 
-# List your variables
-for var in configurazione_git repository_url author author_email data_dir data_directory_name; do
+for var in configurazione_git repository_url autore email_autore data_dir data_directory_name; do
     check_empty $var
 done
 
@@ -44,3 +42,7 @@ if [ "$configurazione_git" = "si" ];
     git push origin HEAD
     fi
 
+if [ "$configurazione_DCV" = "si" ];
+    then
+    dvc init
+    fi
