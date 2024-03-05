@@ -1,3 +1,5 @@
 cookiecutter
 mlflow
 dvc
+ruff
+codecarbon
