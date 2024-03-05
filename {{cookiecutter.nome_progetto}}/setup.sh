@@ -46,4 +46,5 @@ if [ "$configurazione_git" = "si" ];
 if [ "$configurazione_DVC" = "si" ];
     then
     dvc init
+    touch dvc.yaml
     fi
