@@ -1,10 +1,10 @@
 # {{cookiecutter.project_name}}
 
-**Author**: {{cookiecutter.author_name}},
+**Author**: {{cookiecutter.author_name}}
 
 **Email**: {{cookiecutter.author_email}}
 
-**Versione**: {{cookiecutter.project_version}}
+**Version**: {{cookiecutter.project_version}}
 
 {{cookiecutter.project_description}}
 
