@@ -5,7 +5,7 @@ repository_url="{{cookiecutter.repository_url}}"
 author_name="{{cookiecutter.author_name}}"
 author_email="{{cookiecutter.author_email}}"
 data_dir="{{cookiecutter.data_dir}}"
-data_dir_name="{{cookiecutter.data_directory_name}}"
+data_dir_name="{{cookiecutter.data_dir_name}}"
 DVC_configuration="{{cookiecutter.DVC_configuration}}"
 
 check_empty() {
