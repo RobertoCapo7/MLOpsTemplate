@@ -3,7 +3,7 @@ The following repository contains a template for Digital Health projects. Throug
 
 ## Struttura della repository
 ```
-├── {{cookiecutter.nome_progetto}}    <- Main project directory.
+├── {{cookiecutter.project_name}}    <- Main project directory.
 │  ├── data
 │  │   ├── external       <- Data from third party sources.
 │  │   ├── interim        <- Intermediate data that has been transformed.
