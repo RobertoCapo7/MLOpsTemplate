@@ -1,12 +1,12 @@
 {
-  "nome_progetto": "",
-  "descrizione_progetto": "",
-  "versione_progetto": "",
-  "configurazione_git": "Vuoi configurare git? [si|no]",
-  "autore_progetto": "[Nome_autore/Username_GitHub]",
-  "email_autore": "[Email/Email_GitHub]",
-  "repository_url": "",
-  "configurazione_DVC": "Vuoi configurare DVC? [si|no]",
-  "data_dir": "",
-	"data_directory_name": "DATASCI"
+  "project_name": "Enter the project name",
+  "project_description": "Enter the project description",
+  "project_version": "Enter the project version",
+  "git_configuration": "Do you want to configure git? [yes|no]",
+  "author_name": "[Author_name/Username_GitHub]",
+  "author_email": "[Email/Email_GitHub]",
+  "repository_url": "Enter the URL of the GitHub repository",
+  "DVC_configuration": "Do you want to configure DVC? [yes|no]",
+  "data_dir": "Enter the path of the directory",
+	"data_dir_name": "Enter the name of the directory [DATASCI]"
 }

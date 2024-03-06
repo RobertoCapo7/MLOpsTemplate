@@ -1,11 +1,11 @@
 ---
-# Consulta il seguente link per i metadati che possono essere aggiunti: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1
-# Documentazione/Guida: https://huggingface.co/docs/hub/model-cards
+# For reference on model card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/modelcard.md?plain=1
+# Doc / guide: https://huggingface.co/docs/hub/model-cards
 ---
 
 # Model Card for {{ model_id | default("Model ID", true) }}
 
-<!-- Fornisci un breve riassunto di cosa è/cosa fa il modello. -->
+<!-- Provide a quick summary of what the model is/does. -->
 
 {{ model_summary | default("", true) }}
 
@@ -13,7 +13,7 @@
 
 ### Model Description
 
-<!-- Fornisci un riassunti più lungo di cosa è/cosa fa il modello. -->
+<!-- Provide a longer summary of what this model is. -->
 
 {{ model_description | default("", true) }}
 
@@ -27,7 +27,7 @@
 
 ### Model Sources [optional]
 
-<!-- Sezione contenente i link basilari per il modello. -->
+<!-- Provide the basic links for the model. -->
 
 - **Repository:** {{ repo | default("[{{cookiecutter.repository_url}}]", true)}}
 - **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
@@ -35,35 +35,35 @@
 
 ## Uses
 
-<!-- Questa sezione è dedicata alle domande su come si utilizza il modello, includendo gli utenti che lo utilizzeranno e quelli che sono interessati ad esso. -->
+<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
 
 ### Direct Use
 
-<!-- Questa sezione riguarda l'utilizzo del modello senza fine-tuning o senza integrazioni in un ecosystem/app più grande. -->
+<!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
 
 {{ direct_use | default("[More Information Needed]", true)}}
 
 ### Downstream Use [optional]
 
-<!-- Questa sezione riguarda l'utilizzo del modello quando è fine-tuning per un task, o quando è integrato in un ecosystem/app più grande. -->
+<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
 
 {{ downstream_use | default("[More Information Needed]", true)}}
 
 ### Out-of-Scope Use
 
-<!-- Questa sezione affronta l'uso improprio, dannoso e gli usi per i quali il modello non funzionerà bene.  -->
+<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
 
 {{ out_of_scope_use | default("[More Information Needed]", true)}}
 
 ## Bias, Risks, and Limitations
 
-<!-- Questa sezione è destinata alle limitazioni tecniche e a quelle socio-tecniche. -->
+<!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
 {{ bias_risks_limitations | default("[More Information Needed]", true)}}
 
 ### Recommendations
 
-<!-- Questa sezione ha lo scopo di fornire raccomandazioni riguardanti il bias, il rischio e le limitazioni tecniche. -->
+<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
 
 {{ bias_recommendations | default("Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.", true)}}
 
@@ -77,13 +77,13 @@ Use the code below to get started with the model.
 
 ### Training Data
 
-<!-- Questa sezione è collegata al dataset card. Descrivere in breve in cosa consistono i dati di addestramento, fornire una documentazione relativa alla fase di pre-processing dei dati o di un ulteriore filtraggio dati. -->
+<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
 
 {{ training_data | default("[More Information Needed]", true)}}
 
 ### Training Procedure
 
-<!-- Questa sezione è dedicata alle specifiche tecniche. -->
+<!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
 
 #### Preprocessing [optional]
 
@@ -96,31 +96,31 @@ Use the code below to get started with the model.
 
 #### Speeds, Sizes, Times [optional]
 
-<!-- Questa sezione contiene le informazioni sulle capacità, tempo di inizio/fine, le dimensioni del checkpoint (se rilevanti), etc. -->
+<!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
 
 {{ speeds_sizes_times | default("[More Information Needed]", true)}}
 
 ## Evaluation
 
-<!-- Questa sezione descrive i protocolli di valutazione e fornisce i risultati. -->
+<!-- This section describes the evaluation protocols and provides the results. -->
 
 ### Testing Data, Factors & Metrics
 
 #### Testing Data
 
-<!-- Questa sezione dovrebbe essere collegata a una Scheda dei Dati se possibile. -->
+<!-- This should link to a Dataset Card if possible. -->
 
 {{ testing_data | default("[More Information Needed]", true)}}
 
 #### Factors
 
-<!-- Questa sezione contiene gli elementi per cui la valutazione viene scomposta, ad esempio, sottoinsiemi di popolazioni o domini -->
+<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
 
 {{ testing_factors | default("[More Information Needed]", true)}}
 
 #### Metrics
 
-<!-- Questa sezione contiene le metriche di valutazione utilizzate, idealmente con una descrizione del perché vengono utilizzate -->
+<!-- These are the evaluation metrics being used, ideally with a description of why. -->
 
 {{ testing_metrics | default("[More Information Needed]", true)}}
 
@@ -134,13 +134,13 @@ Use the code below to get started with the model.
 
 ## Model Examination [optional]
 
-<!-- In questa sezione vanno inseriti i lavori sull'interpretabilità rilevanti per il modello. -->
+<!-- Relevant interpretability work for the model goes here -->
 
 {{ model_examination | default("[More Information Needed]", true)}}
 
 ## Environmental Impact
 
-<!-- In questa sezione vanno inserite le emissioni totali (in grammi di CO2eq) e considerazioni aggiuntive, come il consumo di elettricità. Modifica il testo riportato in seguito a seconda delle necessità. -->
+<!-- Total emissions (in grams of CO2eq) and additional considerations, such as electricity usage, go here. Edit the suggested text below accordingly -->
 
 Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
 
@@ -170,7 +170,7 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 ## Citation [optional]
 
-<!-- In questa sezione vanno inseriti gli articoli o dei post di blog che introducono il modello, le informazioni APA e Bibtex. -->
+<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
 
 **BibTeX:**
 
@@ -182,7 +182,7 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 ## Glossary [optional]
 
-<!-- Includere in questa sezione termini e calcoli che possono aiutare i lettori a comprendere il modello o la scheda del modello -->
+<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
 
 {{ glossary | default("[More Information Needed]", true)}}
 

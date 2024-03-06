@@ -1,33 +1,33 @@
-# {{cookiecutter.nome_progetto}}
+# {{cookiecutter.project_name}}
 
-**Autore**: {{cookiecutter.autore_progetto}},
+**Author**: {{cookiecutter.author_name}},
 
-**Email**: {{cookiecutter.email_autore}}
+**Email**: {{cookiecutter.author_email}}
 
-**Versione**: {{cookiecutter.versione_progetto}}
+**Versione**: {{cookiecutter.project_version}}
 
-{{cookiecutter.descrizione_progetto}}
+{{cookiecutter.project_description}}
 
 ## Struttura della directory
 ```
-├── conf               <- Directory con file di configurazione.
 ├── data
-│   ├── external       <- Dati provenienti da fonti terze.
-│   ├── interim        <- Dati intermedi trasformati.
-│   ├── processed      <- set di dati finali, canonici per la modellazione.
-│   └── raw            <- Dump dei dati originale e immutabile.
-├── docs               <- Directory per documentazione.
-├── models             <- Modelli addestrati e serializzati, previsioni di modelli o riepiloghi di modelli.
-├── notebooks          <- Directory con Jupyter notebooks.
-├── references         <- Directory contenente le referenze del progetto.
-├── reports            <- Report generati HTML, PDF, LaTeX, etc.
-│   └── figures        <- Grafici e figure generati da utilizzare nei report.
-├── src                <- Codice sorgente del progetto.
-│   ├── data           <- Script per scaricare o generare dati.  
-│   ├── features       <- Script per trasformare i dati grezzi in features.
-│   ├── models         <- Script per addestrare e utilizzare i modelli.        
-│   └── visualization  <- Script per creare visualizzazioni.
-├── Makefile           <- Makefile con comando `make install_requirements`.
-├── README.md          <- File markdown del progetto creato.
-├── requirements.txt   <- File txt contenente tutti i requisiti da installare in venv.
+│   ├── external       <- Data from third party sources.
+│   ├── interim        <- Intermediate data that has been transformed.
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   └── raw            <- The original, immutable data dump.
+├── docs               <- Directory for documentation.
+├── models             <- Trained and serialized models, model predictions, or model summaries.
+├── notebooks          <- Directory with Jupyter notebooks.
+├── references         <- Directory containing project references.
+├── reports            <- Generated HTML, PDF, LaTeX, etc. reports.
+│   └── figures        <- Graphs and figures generated to use in reports.
+├── src                <- Project source code.
+│   ├── data           <- Scripts to download or generate data.
+│   ├── features       <- Scripts to turn raw data into features.
+│   ├── models         <- Scripts to train and use models.        
+│   └── visualization  <- Scripts to create visualizations.
+├── Makefile           <- Makefile with `make install_requirements` command.
+├── README.md          <- Project markdown file created.
+├── requirements.txt   <- Txt file containing all requirements to install in venv.
+├── setup.sh           <- Allows you to configure git and DVC.
 ```

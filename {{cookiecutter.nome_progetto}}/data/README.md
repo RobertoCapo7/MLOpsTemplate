@@ -1,11 +1,11 @@
 ---
-# Consulta il seguente link per i metadati che possono essere aggiunti: https://github.com/huggingface/hub-docs/blob/main/datasetcard.md?plain=1
-# Documentazione/Guida: https://huggingface.co/docs/hub/datasets-cards
+# For reference on dataset card metadata, see the spec: https://github.com/huggingface/hub-docs/blob/main/datasetcard.md?plain=1
+# Doc / guide: https://huggingface.co/docs/hub/datasets-cards
 ---
 
 # Dataset Card for {{ pretty_name | default("Dataset Name", true) }}
 
-<!-- Fornisci un breve riassunto del dataset. -->
+<!-- Provide a quick summary of the dataset. -->
 
 {{ dataset_summary | default("", true) }}
 
@@ -13,7 +13,7 @@
 
 ### Dataset Description
 
-<!-- Fornisci un riassunto più dettagliato su cosa tratta il dataset. -->
+<!-- Provide a longer summary of what this dataset is. -->
 
 {{ dataset_description | default("", true) }}
 
@@ -25,7 +25,7 @@
 
 ### Dataset Sources [optional]
 
-<!-- Sezione contenente i link basilari per il dataset. -->
+<!-- Provide the basic links for the dataset. -->
 
 - **Repository:** {{ repo | default("[{{cookiecutter.repository_url}}]", true)}}
 - **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
@@ -33,23 +33,23 @@
 
 ## Uses
 
-<!-- Questa sezione è dedicata alle domande su come si utilizza il dataset. -->
+<!-- Address questions around how the dataset is intended to be used. -->
 
 ### Direct Use
 
-<!-- Questa sezione descrive i casi d'uso adatti per il set di dati. -->
+<!-- This section describes suitable use cases for the dataset. -->
 
 {{ direct_use | default("[More Information Needed]", true)}}
 
 ### Out-of-Scope Use
 
-<!-- Questa sezione affronta l'uso improprio, dannoso e gli usi per i quali il dataset non funzionerà bene. -->
+<!-- This section addresses misuse, malicious use, and uses that the dataset will not work well for. -->
 
 {{ out_of_scope_use | default("[More Information Needed]", true)}}
 
 ## Dataset Structure
 
-<!-- Questa sezione fornisce una descrizione dei campi del dataset e informazioni aggiuntive sulla struttura del dataset, come i criteri utilizzati per creare le suddivisioni, le relazioni tra i data points, ecc. -->
+<!-- This section provides a description of the dataset fields, and additional information about the dataset structure such as criteria used to create the splits, relationships between data points, etc. -->
 
 {{ dataset_structure | default("[More Information Needed]", true)}}
 
@@ -57,63 +57,63 @@
 
 ### Curation Rationale
 
-<!-- Inserire le motivazioni per la creazione di questo dataset. -->
+<!-- Motivation for the creation of this dataset. -->
 
 {{ curation_rationale_section | default("[More Information Needed]", true)}}
 
 ### Source Data
 
-<!-- Questa sezione descrive i dati di origine (ad esempio, testi e titoli di notizie, post sui social media, frasi tradotte, ...). -->
+<!-- This section describes the source data (e.g. news text and headlines, social media posts, translated sentences, ...). -->
 
 #### Data Collection and Processing
 
-<!-- Questa sezione descrive il processo di raccolta e elaborazione dei dati, come i criteri di selezione dei dati, i metodi di filtraggio e normalizzazione, gli strumenti e le librerie utilizzate, ecc. -->
+<!-- This section describes the data collection and processing process such as data selection criteria, filtering and normalization methods, tools and libraries used, etc. -->
 
 {{ data_collection_and_processing_section | default("[More Information Needed]", true)}}
 
 #### Who are the source data producers?
 
-<!-- Questa sezione descrive le persone o i sistemi che originariamente hanno creato i dati. Dovrebbe includere anche informazioni demografiche o di identità autodichiarate per i creatori dei dati di origine, se tali informazioni sono disponibili. -->
+<!-- This section describes the people or systems who originally created the data. It should also include self-reported demographic or identity information for the source data creators if this information is available. -->
 
 {{ source_data_producers_section | default("[More Information Needed]", true)}}
 
 ### Annotations [optional]
 
-<!-- Se il set di dati contiene annotazioni che non fanno parte della raccolta dati iniziale, utilizzare questa sezione per descriverle. -->
+<!-- If the dataset contains annotations which are not part of the initial data collection, use this section to describe them. -->
 
 #### Annotation process
 
-<!-- Questa sezione descrive il processo di annotazione come gli strumenti di annotazione utilizzati nel processo, la quantità di dati annotati, le linee guida per l'annotazione fornite agli annotatori, le statistiche degli interannotatori, la convalida delle annotazioni, ecc. -->
+<!-- This section describes the annotation process such as annotation tools used in the process, the amount of data annotated, annotation guidelines provided to the annotators, interannotator statistics, annotation validation, etc. -->
 
 {{ annotation_process_section | default("[More Information Needed]", true)}}
 
 #### Who are the annotators?
 
-<!-- Questa sezione descrive le persone o i sistemi che hanno creato le annotazioni. -->
+<!-- This section describes the people or systems who created the annotations. -->
 
 {{ who_are_annotators_section | default("[More Information Needed]", true)}}
 
 #### Personal and Sensitive Information
 
-<!-- Indicare se il set di dati contiene dati che potrebbero essere considerati personali, sensibili o privati (ad esempio, dati che rivelano indirizzi, nomi o alias identificabili in modo univoco, origini razziali o etniche, orientamenti sessuali, credenze religiose, opinioni politiche, dati finanziari o sanitari, ecc. .). Se sono stati compiuti sforzi per anonimizzare i dati, descrivere il processo di anonimizzazione. -->
+<!-- State whether the dataset contains data that might be considered personal, sensitive, or private (e.g., data that reveals addresses, uniquely identifiable names or aliases, racial or ethnic origins, sexual orientations, religious beliefs, political opinions, financial or health data, etc.). If efforts were made to anonymize the data, describe the anonymization process. -->
 
 {{ personal_and_sensitive_information | default("[More Information Needed]", true)}}
 
 ## Bias, Risks, and Limitations
 
-<!-- Questa sezione è destinata alle limitazioni tecniche e a quelle socio-tecniche. -->
+<!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
 {{ bias_risks_limitations | default("[More Information Needed]", true)}}
 
 ### Recommendations
 
-<!-- Questa sezione ha lo scopo di fornire raccomandazioni riguardanti il bias, il rischio e le limitazioni tecniche. -->
+<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
 
 {{ bias_recommendations | default("Users should be made aware of the risks, biases and limitations of the dataset. More information needed for further recommendations.", true)}}
 
 ## Citation [optional]
 
-<!-- In questa sezione vanno inseriti gli articoli o dei post di blog che introducono il dataset, le informazioni APA e Bibtex. -->
+<!-- If there is a paper or blog post introducing the dataset, the APA and Bibtex information for that should go in this section. -->
 
 **BibTeX:**
 
@@ -125,7 +125,7 @@
 
 ## Glossary [optional]
 
-<!-- Includere in questa sezione termini e calcoli che possono aiutare i lettori a comprendere il modello o la scheda del modello. -->
+<!-- If relevant, include terms and calculations in this section that can help readers understand the dataset or dataset card. -->
 
 {{ glossary | default("[More Information Needed]", true)}}
 

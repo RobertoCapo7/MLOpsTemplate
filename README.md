@@ -1,75 +1,82 @@
 # Template MLOps
-_Il seguente repository contiene un template per progetti di Digital Health. Attraverso l'utilizzo di Cookiecutter, si mira a fornire una struttura standardizzata che faciliti la creazione di nuovi progetti. Il template sviluppato include le pratiche di MLOps, garantendo la gestione efficace del ciclo di vita dei modelli di Machine Learning. L’obiettivo principale è quello di rendere accessibile la creazione di progetti di Digital Health anche a coloro che potrebbero non essere esperti in MLOps, fornendo un framework flessibile che si adatta a diverse esigenze._
+The following repository contains a template for Digital Health projects. Through the use of Cookiecutter, the aim is to provide a standardized structure that facilitates the creation of new projects. The developed template includes MLOps practices, ensuring effective management of the Machine Learning model lifecycle. The main goal is to make the creation of Digital Health projects accessible even to those who may not be experts in MLOps, providing a flexible framework that adapts to various needs.
 
 ## Struttura della repository
 ```
-├── {{cookiecutter.nome_progetto}}    <- Directory principale del progetto.
-│    ├── conf               <- Directory con file di configurazione.
-│    ├── data
-│    │   ├── external       <- Dati provenienti da fonti terze.
-│    │   ├── interim        <- Dati intermedi trasformati.
-│    │   ├── processed      <- set di dati finali, canonici per la modellazione.
-│    │   └── raw            <- Dump dei dati originale e immutabile.
-│    ├── docs               <- Directory per documentazione.
-│    ├── models             <- Modelli addestrati e serializzati, previsioni di modelli o riepiloghi di modelli.
-│    ├── notebooks          <- Directory con Jupyter notebooks.
-│    ├── references         <- Directory contenente le referenze del progetto.
-│    ├── reports            <- Report generati HTML, PDF, LaTeX, etc.
-│    │   └── figures        <- Grafici e figure generati da utilizzare nei report.
-│    ├── src                <- Codice sorgente del progetto.
-│    │   ├── data           <- Script per scaricare o generare dati.  
-│    │   ├── features       <- Script per trasformare i dati grezzi in features.
-│    │   ├── models         <- Script per addestrare e utilizzare i modelli.        
-│    │   └── visualization  <- Script per creare visualizzazioni.
-│    ├── Makefile           <- Makefile con comando `make install_requirements`.
-│    ├── README.md          <- File markdown del progetto creato.
-│    ├── requirements.txt   <- File txt contenente tutti i requisiti da installare in venv.
-├── cookiecutter.json     <- File di configurazione Cookiecutter.
-├── README.md             <- File markdown per gli sviluppatori che utilizeranno il template.
+├── {{cookiecutter.nome_progetto}}    <- Main project directory.
+│  ├── data
+│  │   ├── external       <- Data from third party sources.
+│  │   ├── interim        <- Intermediate data that has been transformed.
+│  │   ├── processed      <- The final, canonical data sets for modeling.
+│  │   └── raw            <- The original, immutable data dump.
+│  ├── docs               <- Directory for documentation.
+│  ├── models             <- Trained and serialized models, model predictions, or model summaries.
+│  ├── notebooks          <- Directory with Jupyter notebooks.
+│  ├── references         <- Directory containing project references.
+│  ├── reports            <- Generated HTML, PDF, LaTeX, etc. reports.
+│  │   └── figures        <- Graphs and figures generated to use in reports.
+│  ├── src                <- Project source code.
+│  │   ├── data           <- Scripts to download or generate data.
+│  │   ├── features       <- Scripts to turn raw data into features.
+│  │   ├── models         <- Scripts to train and use models.        
+│  │   └── visualization  <- Scripts to create visualizations.
+│  ├── Makefile           <- Makefile with `make install_requirements` command.
+│  ├── README.md          <- Project markdown file created.
+│  ├── requirements.txt   <- Txt file containing all requirements to install in venv.
+│  ├── setup.sh           <- Allows you to configure git and DVC.
+├── cookiecutter.json     <- Cookiecutter configuration file.
+├── README.md             <- Markdown file for developers utilizing the template.
 ```
-
-# Primo utilizzo del template
-## Requisiti per utilizzare il template
+│
+# First use of the template
+## Requirements to use the template
  - Python 3.10+
- - Cookiecutter Python Package >= 2.5.0: Per poterlo installare bisogna utilizzare questo comando da terminale:
+ - Cookiecutter Python Package >= 2.5.0: To install it, you need to use this command in the terminal:
  ``` bash
  pip install cookiecutter
 ```
-## Creazione di un nuovo progetto
-Per poter creare un nuovo progetto bisogna utilizzare il seguente comando da terminale:
+## Creating a new project
+To create a new project, you need to use the following command in the terminal:
  ``` bash
  cookiecutter https://github.com/RobertoCapo7/MLOpsTemplate/  
 ```
-Al termine del download del template, per la creazione della directory del progetto, cookiecutter richiederà alcune informazioni in input. Rispondere a tutte le richieste di cookiecutter.
-## Creazione dell'ambiente virtuale venv
-Per la creazione dell'ambiente virtuale e l'installazione dei requisiti bisogna seguire i seguenti passi:
-1. Aprire il terminale nella directory creata da cookiecutter
-2. Eseguire il seguente comando:
+At the end of the template download, for the creation of the project directory, Cookiecutter will prompt for some input information. Please respond to all Cookiecutter prompts and make sure not to leave any variable empty.
+## Creation and installation of requirements in the virtual environment 'venv'
+To create the virtual environment and install the requirements, follow these steps:
+1. Open the terminal in the directory created by Cookiecutter.
+2. Run the following command:
  ``` bash
  make install_requirements
 ```
-## [Opzionale] Configurazione Git
-Per poter configurare git con il nome utente e la password date in input a cookiecutter bisogna seguire i seguenti passi:
-1. Aprire il terminale nella directory conf
-2. Eseguire il seguente comando:
+## Git and DVC Configuration [Optional]
+To configure Git, with the username and password provided as input to Cookiecutter, and DVC follow these steps:
+1. Open the terminal in the main directory.
+2. Run the following command:
  ``` bash
- ./git_configuration.sh
+ ./setup.sh
  ```
- In caso di problemi, rendere lo script eseguibile:
+ In case of issues, make the script executable:
  ``` bash
-  chmod +x git_configuration.sh 
+  chmod +x setup.sh 
  ```
 
-# Utilizzo Tools
+# Tool Usage
 ## MLFlow
-### Avviare MLFlow UI
-Per poter avviare il server locale che ospita l'interfaccia utente di MLFlow digitare il seguente comando da terminale:
+### Start MLFlow UI
+To start the local server hosting the MLFlow user interface, type the following command in the terminal:
  ``` bash
-  mlflow ui
+  make start_monitoring
  ```
-Una volta avviato il server, aprire il browser e connettersi al seguente URL:
+Once the server is started, open your browser and connect to the following URL:
 ``` bash
   http://localhost:8080
  ```
-### Configurare porta server MLFlow UI
-In caso di problemi inerenti alla porta utilizzata dal server locale mlflow ui è possibile cambiarla dallo script python 'config.py' contenuto nella directory 'conf'.
+To stop monitoring, press CTRL + C.
+### Configure MLFlow UI server port
+In case of issues regarding the port used by the local MLFlow UI server, it is possible to change it in the Makefile.
+### Quality Assurance tests
+In this template, two Quality Assurance tools, Ruff and Code Carbon, have been integrated. To start them, type the following command in the terminal:
+``` bash
+  make start_QA
+ ```
+To stop the execution of the tools, press CTRL + C.
