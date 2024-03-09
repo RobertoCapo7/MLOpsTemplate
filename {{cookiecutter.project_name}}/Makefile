@@ -13,5 +13,5 @@ start_tracking:
 start_QA:
 	@echo "Start check Quality Assurance..."
 	ruff check .
-	ruff format .  
-	 
+	ruff format .
+	pytest test/
