@@ -14,5 +14,4 @@ start_QA:
 	@echo "Start check Quality Assurance..."
 	ruff check .
 	ruff format .  
-	codecarbon monitor --no-api
 	 
