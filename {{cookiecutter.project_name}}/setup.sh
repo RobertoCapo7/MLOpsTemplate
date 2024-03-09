@@ -44,5 +44,4 @@ if [ "$git_configuration" = "yes" ];
 if [ "$DVC_configuration" = "yes" ];
     then
     dvc init
-    touch dvc.yaml
     fi
