@@ -1,4 +1,5 @@
 import mlflow
+from codecarbon import OfflineEmissionsTracker
 
 def hello_mlflow():
     # Get the version of MLflow.
@@ -20,4 +21,7 @@ def hello_mlflow():
         mlflow.log_artifact("helloword.txt")
 
 if __name__ == "__main__":
+    tracker = OfflineEmissionsTracker(country_iso_code="CAN")
+    tracker.start()
     hello_mlflow()
+    tracker.stop()
