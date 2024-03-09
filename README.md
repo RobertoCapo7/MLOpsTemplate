@@ -20,6 +20,11 @@ The following repository contains a template for Digital Health projects. Throug
 │  │   ├── features       <- Scripts to turn raw data into features.
 │  │   ├── models         <- Scripts to train and use models.        
 │  │   └── visualization  <- Scripts to create visualizations.
+│  ├── test               <- Project test code.
+│  │   ├── data           
+│  │   ├── features       
+│  │   ├── models             
+│  │   └── visualization  
 │  ├── Makefile           <- Makefile with `make install_requirements` command.
 │  ├── README.md          <- Project markdown file created.
 │  ├── requirements.txt   <- Txt file containing all requirements to install in venv.
