@@ -10,6 +10,7 @@ The following repository contains a template for Digital Health projects. Throug
 │  │   ├── processed      <- The final, canonical data sets for modeling.
 │  │   └── raw            <- The original, immutable data dump.
 │  ├── docs               <- Directory for documentation.
+│  ├── example            <- Directory for test scripts and src.
 │  ├── models             <- Trained and serialized models, model predictions, or model summaries.
 │  ├── notebooks          <- Directory with Jupyter notebooks.
 │  ├── references         <- Directory containing project references.
