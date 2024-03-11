@@ -8,7 +8,7 @@ install_requirements:
 	python3 -m pip install -r requirements.txt
 start_tracking:
 	@echo "Start monitoring..."
-	mlflow server --host 127.0.0.1 --port 8080
+	mlflow server --host 127.0.0.1 --port 8080 --backend-store-uri src/models/mlruns
 	mlflow ui
 start_QA:
 	@echo "Start check Quality Assurance..."
