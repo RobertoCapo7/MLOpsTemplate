@@ -17,7 +17,7 @@
 
 {{ model_description | default("", true) }}
 
-- **Developed by:** {{ developers | default("[{{cookiecutter.autore_progetto}}]", true)}}
+- **Developed by:** {{ developers | default("[{{cookiecutter.author_name}}]", true)}}
 - **Funded by [optional]:** {{ funded_by | default("[More Information Needed]", true)}}
 - **Shared by [optional]:** {{ shared_by | default("[More Information Needed]", true)}}
 - **Model type:** {{ model_type | default("[More Information Needed]", true)}}
@@ -192,8 +192,8 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 ## Model Card Authors [optional]
 
-{{ model_card_authors | default("[{{cookiecutter.autore_progetto}}]", true)}}
+{{ model_card_authors | default("[{{cookiecutter.author_name}}]", true)}}
 
 ## Model Card Contact
 
-{{ model_card_contact | default("[{{cookiecutter.email_autore}}]", true)}}
+{{ model_card_contact | default("[{{cookiecutter.author_email}}]", true)}}

@@ -17,7 +17,7 @@
 
 {{ dataset_description | default("", true) }}
 
-- **Curated by:** {{ curators | default("[{{cookiecutter.autore_progetto}}]", true)}}
+- **Curated by:** {{ curators | default("[{{cookiecutter.author_name}}]", true)}}
 - **Funded by [optional]:** {{ funded_by | default("[More Information Needed]", true)}}
 - **Shared by [optional]:** {{ shared_by | default("[More Information Needed]", true)}}
 - **Language(s) (NLP):** {{ language | default("[More Information Needed]", true)}}
@@ -135,8 +135,8 @@
 
 ## Dataset Card Authors [optional]
 
-{{ dataset_card_authors | default("[{{cookiecutter.autore_progetto}}]", true)}}
+{{ dataset_card_authors | default("[{{cookiecutter.author_name}}]", true)}}
 
 ## Dataset Card Contact
 
-{{ dataset_card_contact | default("[{{cookiecutter.email_autore}}]", true)}}
+{{ dataset_card_contact | default("[{{cookiecutter.author_email}}]", true)}}
