@@ -5,7 +5,6 @@ repository_url="{{cookiecutter.repository_url}}"
 author_name="{{cookiecutter.author_name}}"
 author_email="{{cookiecutter.author_email}}"
 data_dir="{{cookiecutter.data_dir}}"
-data_dir_name="{{cookiecutter.data_dir_name}}"
 DVC_configuration="{{cookiecutter.DVC_configuration}}"
 
 check_empty() {
@@ -32,7 +31,10 @@ if [ "$git_configuration" = "yes" ];
     git remote add origin {{cookiecutter.repository_url}}
     git fetch
     git pull origin master
-    mv {{cookiecutter.data_dir_name}} {{cookiecutter.data_dir}}
+    if [ "$cookiecutter.data_dir" != "no" ];
+    then
+        mv {{cookiecutter.data_dir}} {{cookiecutter.project_name}}/data/raw
+    fi
     git add .
     git commit -m 'initializing from cookiecutter'
     git push -u origin master

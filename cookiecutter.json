@@ -7,6 +7,5 @@
   "author_email": "[Email/Email_GitHub]",
   "repository_url": "Enter the URL of the GitHub repository",
   "DVC_configuration": "Do you want to configure DVC? [yes|no]",
-  "data_dir": "Enter the path of the directory",
-	"data_dir_name": "Enter the name of the directory [DATASCI]"
+  "data_dir": "Enter the path of the data directory or no"
 }
