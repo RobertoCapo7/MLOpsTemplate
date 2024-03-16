@@ -44,7 +44,7 @@ The following repository contains a template for Digital Health projects. Throug
 ## Creating a new project
 To create a new project, you need to use the following command in the terminal:
  ``` bash
- cookiecutter https://github.com/RobertoCapo7/MLOpsTemplate/  
+ cookiecutter https://github.com/collab-uniba/MLOpsTemplate
 ```
 At the end of the template download, for the creation of the project directory, Cookiecutter will prompt for some input information. Please respond to all Cookiecutter prompts and make sure not to leave any variable empty.
 ## Creation and installation of requirements in the virtual environment 'venv'
