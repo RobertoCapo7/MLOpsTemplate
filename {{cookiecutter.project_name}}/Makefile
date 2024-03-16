@@ -2,8 +2,9 @@
 SHELL = /bin/bash
 
 .ONESHELL:
-install_requirements:
+virtualenv:
 	python3 -m venv venv
+install:
 	source venv/bin/activate && \
 	python3 -m pip install -r requirements.txt
 start_tracking:
