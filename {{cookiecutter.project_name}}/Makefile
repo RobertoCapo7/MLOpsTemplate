@@ -16,4 +16,6 @@ start_QA:
 	ruff check .
 	ruff format .
 	pynblint notebooks
+	bandit -r src
+	mypy src
 	pytest test/
