@@ -15,4 +15,5 @@ start_QA:
 	@echo "Start check Quality Assurance..."
 	ruff check .
 	ruff format .
+	pynblint notebooks
 	pytest test/
