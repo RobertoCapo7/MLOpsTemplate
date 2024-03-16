@@ -7,6 +7,9 @@ virtualenv:
 install:
 	source venv/bin/activate && \
 	python3 -m pip install -r requirements.txt
+update:
+	source venv/bin/activate && \
+	pip install --upgrade -r requirements.txt
 start_tracking:
 	@echo "Start monitoring..."
 	mlflow server --host 127.0.0.1 --port 8080 --backend-store-uri src/models/mlruns
