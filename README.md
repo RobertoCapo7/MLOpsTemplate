@@ -1,7 +1,7 @@
 # Template MLOps
 The following repository contains a template for Digital Health projects. Through the use of Cookiecutter, the aim is to provide a standardized structure that facilitates the creation of new projects. The developed template includes MLOps practices, ensuring effective management of the Machine Learning model lifecycle. The main goal is to make the creation of Digital Health projects accessible even to those who may not be experts in MLOps, providing a flexible framework that adapts to various needs.
 
-## Struttura della repository
+## Repository structure
 ```
 ├── {{cookiecutter.project_name}}    <- Main project directory.
 │  ├── data
@@ -37,6 +37,9 @@ The following repository contains a template for Digital Health projects. Throug
 # First use of the template
 ## Requirements to use the template
  - Python 3.10+
+ ``` bash
+ python --version
+```
  - Cookiecutter Python Package >= 2.5.0: To install it, you need to use this command in the terminal:
  ``` bash
  pip install cookiecutter
@@ -50,28 +53,24 @@ At the end of the template download, for the creation of the project directory, 
 ## Creation and installation of requirements in the virtual environment 'venv'
 To create the virtual environment and install the requirements, follow these steps:
 1. Open the terminal in the directory created by Cookiecutter.
-2. Run the following command:
+2. Run the following commands:
  ``` bash
- make install_requirements
+ make virtualenv
+ make install
 ```
 ## Git and DVC Configuration [Optional]
 To configure Git, with the username and password provided as input to Cookiecutter, and DVC follow these steps:
 1. Open the terminal in the main directory.
 2. Run the following command:
  ``` bash
- ./setup.sh
+  make setup
  ```
- In case of issues, make the script executable:
- ``` bash
-  chmod +x setup.sh 
- ```
-
-# Tool Usage
+# Tool Usage with Make
 ## MLFlow
 ### Start MLFlow UI
 To start the local server hosting the MLFlow user interface, type the following command in the terminal:
  ``` bash
-  make start_monitoring
+  make start_tracking
  ```
 Once the server is started, open your browser and connect to the following URL:
 ``` bash
@@ -81,8 +80,7 @@ To stop monitoring, press CTRL + C.
 ### Configure MLFlow UI server port
 In case of issues regarding the port used by the local MLFlow UI server, it is possible to change it in the Makefile.
 ### Quality Assurance tests
-In this template, two Quality Assurance tools, Ruff and Code Carbon, have been integrated. To start them, type the following command in the terminal:
+In this template, quality assurance tools have been used. To start ruff, bandit, pylint, Mypy, and pytest, type the following command in the terminal:
 ``` bash
   make start_QA
  ```
-To stop the execution of the tools, press CTRL + C.

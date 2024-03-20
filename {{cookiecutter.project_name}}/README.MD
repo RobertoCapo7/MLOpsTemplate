@@ -8,7 +8,7 @@
 
 {{cookiecutter.project_description}}
 
-## Struttura della directory
+## Repository structure
 ```
 ├── data
 │   ├── external       <- Data from third party sources.
