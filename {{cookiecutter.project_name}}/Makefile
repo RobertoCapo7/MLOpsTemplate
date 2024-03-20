@@ -54,7 +54,7 @@ setup:
     fi
 
 start_tracking:
-	@echo "Start monitoring..."
+	@echo "Start tracking MlFlow..."
 	mlflow server --host 127.0.0.1 --port 8080 --backend-store-uri src/models/mlruns
 	mlflow ui
 
