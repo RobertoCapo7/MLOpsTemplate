@@ -1,0 +1,10 @@
+cookiecutter
+mlflow
+dvc
+ruff
+codecarbon
+pytest
+pynblint
+bandit
+mypy
+deepchecks

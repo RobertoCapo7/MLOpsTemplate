@@ -3,11 +3,11 @@
 # Doc / guide: https://huggingface.co/docs/hub/model-cards
 ---
 
-# Model Card for {{ model_id | default("Model ID", true) }}
+# Model Card for Model ID
 
 <!-- Provide a quick summary of what the model is/does. -->
 
-{{ model_summary | default("", true) }}
+
 
 ## Model Details
 
@@ -15,23 +15,23 @@
 
 <!-- Provide a longer summary of what this model is. -->
 
-{{ model_description | default("", true) }}
 
-- **Developed by:** {{ developers | default( cookiecutter.author_name , true)}}
-- **Funded by [optional]:** {{ funded_by | default("[More Information Needed]", true)}}
-- **Shared by [optional]:** {{ shared_by | default("[More Information Needed]", true)}}
-- **Model type:** {{ model_type | default("[More Information Needed]", true)}}
-- **Language(s) (NLP):** {{ language | default("[More Information Needed]", true)}}
-- **License:** {{ license | default("[More Information Needed]", true)}}
-- **Finetuned from model [optional]:** {{ base_model | default("[More Information Needed]", true)}}
+
+- **Developed by:** ciacisacicsaicas
+- **Funded by [optional]:** [More Information Needed]
+- **Shared by [optional]:** [More Information Needed]
+- **Model type:** [More Information Needed]
+- **Language(s) (NLP):** [More Information Needed]
+- **License:** [More Information Needed]
+- **Finetuned from model [optional]:** [More Information Needed]
 
 ### Model Sources [optional]
 
 <!-- Provide the basic links for the model. -->
 
-- **Repository:** {{ repo | default( cookiecutter.repository_url , true)}}
-- **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
-- **Demo [optional]:** {{ demo | default("[More Information Needed]", true)}}
+- **Repository:** saassasa
+- **Paper [optional]:** [More Information Needed]
+- **Demo [optional]:** [More Information Needed]
 
 ## Uses
 
@@ -41,37 +41,37 @@
 
 <!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
 
-{{ direct_use | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ### Downstream Use [optional]
 
 <!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
 
-{{ downstream_use | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ### Out-of-Scope Use
 
 <!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
 
-{{ out_of_scope_use | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ## Bias, Risks, and Limitations
 
 <!-- This section is meant to convey both technical and sociotechnical limitations. -->
 
-{{ bias_risks_limitations | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ### Recommendations
 
 <!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
 
-{{ bias_recommendations | default("Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.", true)}}
+Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.
 
 ## How to Get Started with the Model
 
 Use the code below to get started with the model.
 
-{{ get_started_code | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ## Training Details
 
@@ -79,7 +79,7 @@ Use the code below to get started with the model.
 
 <!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
 
-{{ training_data | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ### Training Procedure
 
@@ -87,18 +87,18 @@ Use the code below to get started with the model.
 
 #### Preprocessing [optional]
 
-{{ preprocessing | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 
 #### Training Hyperparameters
 
-- **Training regime:** {{ training_regime | default("[More Information Needed]", true)}} <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
+- **Training regime:** [More Information Needed] <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
 
 #### Speeds, Sizes, Times [optional]
 
 <!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
 
-{{ speeds_sizes_times | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ## Evaluation
 
@@ -110,33 +110,33 @@ Use the code below to get started with the model.
 
 <!-- This should link to a Dataset Card if possible. -->
 
-{{ testing_data | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 #### Factors
 
 <!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
 
-{{ testing_factors | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 #### Metrics
 
 <!-- These are the evaluation metrics being used, ideally with a description of why. -->
 
-{{ testing_metrics | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ### Results
 
-{{ results | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 #### Summary
 
-{{ results_summary | default("", true) }}
+
 
 ## Model Examination [optional]
 
 <!-- Relevant interpretability work for the model goes here -->
 
-{{ model_examination | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ## Environmental Impact
 
@@ -144,29 +144,29 @@ Use the code below to get started with the model.
 
 Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
 
-- **Hardware Type:** {{ hardware_type | default("[More Information Needed]", true)}}
-- **Hours used:** {{ hours_used | default("[More Information Needed]", true)}}
-- **Cloud Provider:** {{ cloud_provider | default("[More Information Needed]", true)}}
-- **Compute Region:** {{ cloud_region | default("[More Information Needed]", true)}}
-- **Carbon Emitted:** {{ co2_emitted | default("[More Information Needed]", true)}}
+- **Hardware Type:** [More Information Needed]
+- **Hours used:** [More Information Needed]
+- **Cloud Provider:** [More Information Needed]
+- **Compute Region:** [More Information Needed]
+- **Carbon Emitted:** [More Information Needed]
 
 ## Technical Specifications [optional]
 
 ### Model Architecture and Objective
 
-{{ model_specs | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ### Compute Infrastructure
 
-{{ compute_infrastructure | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 #### Hardware
 
-{{ hardware_requirements | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 #### Software
 
-{{ software | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ## Citation [optional]
 
@@ -174,26 +174,26 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 **BibTeX:**
 
-{{ citation_bibtex | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 **APA:**
 
-{{ citation_apa | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ## Glossary [optional]
 
 <!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
 
-{{ glossary | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ## More Information [optional]
 
-{{ more_information | default("[More Information Needed]", true)}}
+[More Information Needed]
 
 ## Model Card Authors [optional]
 
-{{ model_card_authors | default( cookiecutter.author_name , true)}}
+ciacisacicsaicas
 
 ## Model Card Contact
 
-{{ model_card_contact | default( cookiecutter.author_email , true)}}
+pasticio@
