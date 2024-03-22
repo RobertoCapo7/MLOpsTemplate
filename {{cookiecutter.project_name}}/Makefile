@@ -67,19 +67,15 @@ initialize_repo:
 	git init
     ifeq ($(github_repo_init),"yes")
 	    git remote add origin {{cookiecutter.repository_url}}
-	    git fetch
-	    git pull origin master
+		git add .
+	    git commit -m 'initializing from cookiecutter'
+	    git branch -M main
+	    git push -u origin main
         ifneq ($(data_dir),"no")
 	        mv $(data_dir) {{cookiecutter.project_name}}/data/raw
         else 
 	        @echo "Skipping data directory setup as data_dir is set to 'no'."
         endif
-	    git add .
-	    git commit -m 'initializing from cookiecutter'
-	    git push -u origin master
-	    git branch -M master feature/initialize_template
-	    git branch --remotes --delete  origin/master
-	    git push origin HEAD
     else
 	    @echo "Skipping github repo init"
     endif
