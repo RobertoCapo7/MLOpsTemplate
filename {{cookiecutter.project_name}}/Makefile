@@ -1,11 +1,18 @@
 SHELL = /bin/bash
 
 git_configuration := "{{cookiecutter.git_configuration}}"
+github_repo_init := "{{cookiecutter.github_repo_init}}"
 repository_url := "{{cookiecutter.repository_url}}"
-author_name="{{cookiecutter.author_name}}"
-author_email="{{cookiecutter.author_email}}"
-data_dir="{{cookiecutter.data_dir}}"
-DVC_configuration="{{cookiecutter.DVC_configuration}}"
+author_name := "{{cookiecutter.author_name}}"
+author_email :="{{cookiecutter.author_email}}"
+data_dir := "{{cookiecutter.data_dir}}"
+DVC_configuration := "{{cookiecutter.DVC_configuration}}"
+
+ifeq ($(OS),Windows_NT)
+        ACTIVATE := venv\Scripts\activate  
+    else
+        ACTIVATE := source venv/bin/activate
+    endif
 
 .ONESHELL:
 virtualenv:
@@ -13,45 +20,79 @@ virtualenv:
 	@echo "Virtual environment created successfully"
 
 install:
-	source venv/bin/activate && \
-	python3 -m pip install -r requirements.txt
+	$(ACTIVATE) && python -m pip install -r requirements.txt
 
 update:
-	source venv/bin/activate && \
-	pip install --upgrade -r requirements.txt
+	$(ACTIVATE) && pip install --upgrade -r requirements.txt
 
-setup:
-	check_empty() { \
-        var_name=$$1; \
-        eval var_value=$$$$var_name; \
-        if [ -z "$$var_value" ]; then \
-            echo "Error! The variable $$var_name is empty!"; \
-            exit 1; \
-        fi; \
-    }; \
-    for var in git_configuration DVC_configuration repository_url author_name author_email data_dir; do \
-        check_empty $$var; \
-    done; \
-    git init; \
-    if [ "$(git_configuration)" = "yes" ]; then \
-        git config user.name "{{cookiecutter.author_name}}"; \
-        git config user.email "{{cookiecutter.author_email}}"; \
-        git remote add origin {{cookiecutter.repository_url}}; \
-        git fetch; \
-        git pull origin master; \
-        if [ "{{cookiecutter.data_dir}}" != "no" ]; then \
-            mv {{cookiecutter.data_dir}} {{cookiecutter.project_name}}/data/raw; \
-        fi; \
-        git add .; \
-        git commit -m 'initializing from cookiecutter'; \
-        git push -u origin master; \
-        git branch -M master feature/initialize_template; \
-        git branch --remotes --delete  origin/master; \
-        git push origin HEAD; \
-    fi; \
-    if [ "$(DVC_configuration)" = "yes" ]; then \
-        dvc init; \
-    fi
+check_variables:
+    ifeq ($(git_configuration),"")
+	    @echo "git_configuration is not set"
+	    exit 1
+    endif
+    ifeq ($(github_repo_init),"")
+	    @echo "github_repo_init is not set"
+	    exit 1
+    endif
+    ifeq ($(repository_url),"")
+	    @echo "repository_url is not set"
+	    exit 1
+    endif
+    ifeq ($(author_name),"")
+	    @echo "author_name is not set"
+	    exit 1
+    endif
+    ifeq ($(author_email),"")
+	    @echo "author_email is not set"
+	    exit 1
+    endif
+    ifeq ($(data_dir),"")
+	    @echo "data_dir is not specified"
+	    exit 1
+    endif
+    ifeq ($(DVC_configuration),"")
+	    @echo "DVC_configuration is not set"
+	    exit 1
+    endif
+
+initialize_git:
+    ifeq ($(git_configuration),"yes")
+	    git config --global user.name $(author_name)
+	    git config --global user.email $(author_email)
+    else
+	    @echo "Skipping git configuration"
+    endif
+
+initialize_repo:
+	git init
+    ifeq ($(github_repo_init),"yes")
+	    git remote add origin $(repository_url)
+	    git fetch
+	    git pull origin master
+        ifneq ($(data_dir),"no")
+	        mv $(data_dir) {{cookiecutter.project_name}}/data/raw
+        else 
+	        @echo "Skipping data directory setup as data_dir is set to 'no'."
+        endif
+	    git add .
+	    git commit -m 'initializing from cookiecutter'
+	    git push -u origin master
+	    git branch -M master feature/initialize_template
+	    git branch --remotes --delete  origin/master
+	    git push origin HEAD
+    else
+	    @echo "Skipping github repo init"
+    endif
+
+initialize_dvc:
+    ifeq ($(DVC_configuration),"yes")
+	    dvc init
+    endif
+    ifeq ($(DVC_configuration),"no")
+	    @echo "Skipping initialization as DVC."
+    endif
+
+setup_versioning: check_variables initialize_git initialize_repo initialize_dvc
 
 start_tracking:
 	@echo "Start tracking MlFlow..."
