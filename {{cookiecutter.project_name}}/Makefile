@@ -66,7 +66,7 @@ initialize_git:
 initialize_repo:
 	git init
     ifeq ($(github_repo_init),"yes")
-	    git remote add origin $(repository_url)
+	    git remote add origin {{cookiecutter.repository_url}}
 	    git fetch
 	    git pull origin master
         ifneq ($(data_dir),"no")
