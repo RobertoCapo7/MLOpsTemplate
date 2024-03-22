@@ -86,7 +86,7 @@ initialize_repo:
 
 initialize_dvc:
     ifeq ($(DVC_configuration),"yes")
-	    dvc init
+	    $(ACTIVATE) && dvc init
     endif
     ifeq ($(DVC_configuration),"no")
 	    @echo "Skipping initialization as DVC."
