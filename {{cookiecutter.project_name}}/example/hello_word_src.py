@@ -12,7 +12,7 @@ def hello_mlflow():
     mlflow.set_experiment("hello_world")
     
     # Start a new MLflow run 
-    with mlflow.start_run() as run:
+    with mlflow.start_run():
         ''' With MLflow, you can log parameters, metrics, plots, models, artifact, and more.'''
         # mlflow.models.log_model(model=MLModel, artifact_path="path")
         # mlflow.log_figure(fig_plt,"figureName")
