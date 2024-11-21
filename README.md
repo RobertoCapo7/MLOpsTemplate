@@ -2,7 +2,7 @@
 
 *A Cookiecutter Template for Building Production-ready ML Components in Healthcare*
 
-![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+![License](https://img.shields.io/badge/license-CC--BY--NC%204.0-blue)
 
 This repository provides a **[Cookiecutter](https://www.cookiecutter.io) template** for developing ML-based software components to be integrated into digital health solutions.
 
