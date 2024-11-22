@@ -12,7 +12,7 @@
 
 {{ dataset_description | default("", true) }}
 
-- **Curated by:** {{ curators | default( cookiecutter.author_name , true)}}
+- **Curated by:** {{ curators | default("[More Information Needed]", true)}}
 - **Funded by [optional]:** {{ funded_by | default("[More Information Needed]", true)}}
 - **Shared by [optional]:** {{ shared_by | default("[More Information Needed]", true)}}
 - **Language(s) (NLP):** {{ language | default("[More Information Needed]", true)}}
@@ -22,7 +22,7 @@
 
 <!-- Provide the basic links for the dataset. -->
 
-- **Repository:** {{ repo | default( cookiecutter.repository_url , true)}}
+- **Repository:** {{ repo | default("[More Information Needed]", true)}}
 - **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
 - **Demo [optional]:** {{ demo | default("[More Information Needed]", true)}}
 
@@ -130,8 +130,8 @@
 
 ## Dataset Card Authors [optional]
 
-{{ dataset_card_authors | default( cookiecutter.author_name , true)}}
+{{ dataset_card_authors | default("[More Information Needed]", true)}}
 
 ## Dataset Card Contact
 
-{{ dataset_card_contact | default( cookiecutter.author_email , true)}}
+{{ dataset_card_contact | default("[More Information Needed]", true)}}

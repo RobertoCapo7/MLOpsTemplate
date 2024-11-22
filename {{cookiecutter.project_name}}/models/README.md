@@ -12,7 +12,7 @@
 
 {{ model_description | default("", true) }}
 
-- **Developed by:** {{ developers | default( cookiecutter.author_name , true)}}
+- **Developed by:** {{ developers | default("[More Information Needed]", true)}}
 - **Funded by [optional]:** {{ funded_by | default("[More Information Needed]", true)}}
 - **Shared by [optional]:** {{ shared_by | default("[More Information Needed]", true)}}
 - **Model type:** {{ model_type | default("[More Information Needed]", true)}}
@@ -24,7 +24,7 @@
 
 <!-- Provide the basic links for the model. -->
 
-- **Repository:** {{ repo | default( cookiecutter.repository_url , true)}}
+- **Repository:** {{ repo | default("[More Information Needed]", true)}}
 - **Paper [optional]:** {{ paper | default("[More Information Needed]", true)}}
 - **Demo [optional]:** {{ demo | default("[More Information Needed]", true)}}
 
@@ -187,8 +187,8 @@ Carbon emissions can be estimated using the [Machine Learning Impact calculator]
 
 ## Model Card Authors [optional]
 
-{{ model_card_authors | default( cookiecutter.author_name , true)}}
+{{ model_card_authors | default("[More Information Needed]", true)}}
 
 ## Model Card Contact
 
-{{ model_card_contact | default( cookiecutter.author_email , true)}}
+{{ model_card_contact | default("[More Information Needed]", true)}}
