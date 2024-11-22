@@ -18,7 +18,7 @@ update:
 	$(ACTIVATE) && pip install --upgrade -r requirements.txt
 
 initialize_git:
-    git init
+	git init
 	git add .
 	git commit -m "Initial commit"
 
