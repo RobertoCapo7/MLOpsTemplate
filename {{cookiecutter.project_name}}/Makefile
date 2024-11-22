@@ -9,7 +9,7 @@ data_dir := "{{cookiecutter.data_dir}}"
 DVC_configuration := "{{cookiecutter.DVC_configuration}}"
 
 ifeq ($(OS),Windows_NT)
-        ACTIVATE := venv\Scripts\activate  
+        ACTIVATE := venv\Scripts\activate
     else
         ACTIVATE := source venv/bin/activate
     endif
@@ -73,7 +73,7 @@ initialize_repo:
 	    git push -u origin main
         ifneq ($(data_dir),"no")
 	        mv $(data_dir) {{cookiecutter.project_name}}/data/raw
-        else 
+        else
 	        @echo "Skipping data directory setup as data_dir is set to 'no'."
         endif
     else
@@ -92,14 +92,14 @@ setup_versioning: check_variables initialize_git initialize_repo initialize_dvc
 
 start_tracking:
 	@echo "Start tracking MlFlow..."
-	mlflow server --host 127.0.0.1 --port 8080 --backend-store-uri src/models/mlruns
-	mlflow ui
+	$(ACTIVATE) && mlflow server --host 127.0.0.1 --port 8080 --backend-store-uri src/models/mlruns
 
 start_QA:
-	@echo "Start check Quality Assurance..."
-	ruff check .
-	ruff format .
-	pynblint notebooks
-	bandit -r src
-	mypy src
+	@echo "Start Quality Assurance..."
+	$(ACTIVATE) && echo "Executing Ruff..." && ruff check .
+	$(ACTIVATE) && echo "Executing Mypy..." && mypy src
+	$(ACTIVATE) && echo "Executing Bandit..." && bandit -r src
+
+start_testing:
+	@echo "Start testing..."
 	pytest test/

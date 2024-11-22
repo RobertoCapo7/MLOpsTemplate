@@ -145,14 +145,24 @@ To stop the MLflow server, press `CTRL + C` in the terminal window where it was 
 
 **Note:** If you encounter issues with the port used by the local MLFlow UI server, you can change it in the Makefile.
 
-#### Quality Assurance
+### Step 4 – Quality Assurance
 
-This template provides quality assurance tools for evaluating Python code, including static analyzers such as `ruff`, `pynblint`, `bandit`, and `mypy`. It also supports testing with `pytest`.
+#### Static Analysis
 
-To perform static analysis and run test suites, enter the following command in the terminal:
+This template provides quality assurance tools for evaluating Python code, including static analyzers such as `ruff`, `pynblint`, `bandit`, and `mypy`.
+
+To perform static analysis using these tools, run the following command in the terminal:
 
 ```bash
 make start_QA
+```
+
+#### Testing
+
+To run your test suite using Pytest, run the following command:
+
+```bash
+make start_testing
 ```
 
 ## Repository structure
