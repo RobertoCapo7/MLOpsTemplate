@@ -88,13 +88,13 @@ python -m pip install --user cookiecutter
 To create a new MLOps project using this template, use Cookiecutter by running:
 
 ``` bash
-cookiecutter https://github.com/collab-uniba/MLOpsTemplate
+cookiecutter https://github.com/collab-uniba/Cookiecutter-MLHOps
 ```
 
 or
 
 ``` bash
-python3 -m cookiecutter https://github.com/collab-uniba/MLOpsTemplate
+python3 -m cookiecutter https://github.com/collab-uniba/Cookiecutter-MLHOps
 ```
 
 Once the template download is complete, Cookiecutter will request input to create the project directory. Ensure you respond to all prompts and do not leave any fields blank.
