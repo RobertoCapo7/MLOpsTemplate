@@ -1,12 +1,5 @@
 {
   "project_name": "Enter the project name",
   "project_description": "Enter the project description",
-  "project_version": "Enter the project version",
-  "git_configuration": "Do you want to configure git credentials? [yes|no]",
-  "github_repo_init": "Do you want to initialize the GitHub repository? [yes|no]",
-  "author_name": "[Author_name/Username_GitHub]",
-  "author_email": "[Email/Email_GitHub]",
-  "repository_url": "Enter the URL of the GitHub repository",
-  "DVC_configuration": "Do you want to configure DVC? [yes|no]",
-  "data_dir": "Enter the path for the dataset to move into the 'data/raw' directory, otherwise enter 'no'."
+  "project_version": "Enter the project version"
 }

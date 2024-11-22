@@ -1,11 +1,5 @@
 # {{cookiecutter.project_name}}
 
-**Author**: {{cookiecutter.author_name}}
-
-**Email**: {{cookiecutter.author_email}}
-
-**Version**: {{cookiecutter.project_version}}
-
 {{cookiecutter.project_description}}
 
 ## Repository structure

@@ -113,19 +113,24 @@ To do so, follow these steps:
    make install
    ```
 
-### Step 2 - Configure Git, GitHub, and DVC [Optional]
+### Step 2 - Configure Git and DVC [Optional]
 
-To set up Git credentials, initialize a GitHub repository (with the URL provided as input to Cookiecutter), and configure DVC, follow these steps:
+To initialize the Git repository, run the following make command:
 
-1. open the terminal in the root directory;
-2. run the following command:
+``` bash
+make initialize_git
+```
 
-   ``` bash
-   make setup_versioning
-   ```
+To initialize the DVC repository, run the following make command:
 
-If you are using Windows, use **Git Bash** to execute this command.
+``` bash
+make initialize_dvc
+```
 
+**Note:** If you are using Windows, use **Git Bash** to execute this command.
+
+At this point, you can push the repo to the code hosting platform of your choice (e.g., GithHub).
+Likewise, you can assign a remote storage location for DVC.
 
 ### Step 3 - Start the development environment
 

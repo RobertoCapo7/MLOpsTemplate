@@ -1,13 +1,5 @@
 SHELL = /bin/bash
 
-git_configuration := "{{cookiecutter.git_configuration}}"
-github_repo_init := "{{cookiecutter.github_repo_init}}"
-repository_url := "{{cookiecutter.repository_url}}"
-author_name := "{{cookiecutter.author_name}}"
-author_email :="{{cookiecutter.author_email}}"
-data_dir := "{{cookiecutter.data_dir}}"
-DVC_configuration := "{{cookiecutter.DVC_configuration}}"
-
 ifeq ($(OS),Windows_NT)
         ACTIVATE := venv\Scripts\activate
     else
@@ -25,77 +17,22 @@ install:
 update:
 	$(ACTIVATE) && pip install --upgrade -r requirements.txt
 
-check_variables:
-    ifeq ($(git_configuration),"")
-	    @echo "git_configuration is not set"
-	    exit 1
-    endif
-    ifeq ($(github_repo_init),"")
-	    @echo "github_repo_init is not set"
-	    exit 1
-    endif
-    ifeq ($(repository_url),"")
-	    @echo "repository_url is not set"
-	    exit 1
-    endif
-    ifeq ($(author_name),"")
-	    @echo "author_name is not set"
-	    exit 1
-    endif
-    ifeq ($(author_email),"")
-	    @echo "author_email is not set"
-	    exit 1
-    endif
-    ifeq ($(data_dir),"")
-	    @echo "data_dir is not specified"
-	    exit 1
-    endif
-    ifeq ($(DVC_configuration),"")
-	    @echo "DVC_configuration is not set"
-	    exit 1
-    endif
-
 initialize_git:
-    ifeq ($(git_configuration),"yes")
-	    git config --global user.name $(author_name)
-	    git config --global user.email $(author_email)
-    else
-	    @echo "Skipping git configuration"
-    endif
-
-initialize_repo:
-	git init
-    ifeq ($(github_repo_init),"yes")
-	    git remote add origin {{cookiecutter.repository_url}}
-		git add .
-	    git commit -m 'initializing from cookiecutter'
-	    git branch -M main
-	    git push -u origin main
-        ifneq ($(data_dir),"no")
-	        mv $(data_dir) {{cookiecutter.project_name}}/data/raw
-        else
-	        @echo "Skipping data directory setup as data_dir is set to 'no'."
-        endif
-    else
-	    @echo "Skipping github repo init"
-    endif
+    git init
+	git add .
+	git commit -m "Initial commit"
 
 initialize_dvc:
-    ifeq ($(DVC_configuration),"yes")
-	    $(ACTIVATE) && dvc init
-    endif
-    ifeq ($(DVC_configuration),"no")
-	    @echo "Skipping initialization as DVC."
-    endif
-
-setup_versioning: check_variables initialize_git initialize_repo initialize_dvc
+	$(ACTIVATE) && dvc init
+	git add .
+	git commit -m "Initialize DVC"
 
 start_tracking:
 	@echo "Start tracking MlFlow..."
 	$(ACTIVATE) && mlflow server --host 127.0.0.1 --port 8080 --backend-store-uri src/models/mlruns
 
 start_QA:
-	@echo "Start Quality Assurance..."
+	@echo "Start Quality Assurance checks..."
 	$(ACTIVATE) && echo "Executing Ruff..." && ruff check .
 	$(ACTIVATE) && echo "Executing Mypy..." && mypy src
 	$(ACTIVATE) && echo "Executing Bandit..." && bandit -r src
