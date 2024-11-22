@@ -111,7 +111,6 @@ To do so, follow these steps:
    ``` bash
    make virtualenv
    make install
-   make update
    ```
 
 ### Step 2 - Configure Git, GitHub, and DVC [Optional]
