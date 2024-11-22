@@ -9,7 +9,8 @@
 {{cookiecutter.project_description}}
 
 ## Repository structure
-```
+
+```text
 ├── data
 │   ├── external       <- Data from third party sources.
 │   ├── interim        <- Intermediate data that has been transformed.
@@ -25,13 +26,13 @@
 ├── src                <- Project source code.
 │   ├── data           <- Scripts to download or generate data.
 │   ├── features       <- Scripts to turn raw data into features.
-│   ├── models         <- Scripts to train and use models.        
+│   ├── models         <- Scripts to train and use models.
 │   └── visualization  <- Scripts to create visualizations.
 ├── test               <- Project test code.
-│   ├── data           
-│   ├── features       
-│   ├── models             
-│   └── visualization  
+│   ├── data
+│   ├── features
+│   ├── models
+│   └── visualization
 ├── Makefile           <- Makefile with `make install_requirements` command.
 ├── README.md          <- Project markdown file created.
 ├── requirements.txt   <- Txt file containing all requirements to install in venv.
