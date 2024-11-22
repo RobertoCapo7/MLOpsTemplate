@@ -21,10 +21,30 @@ Additionally, the template incorporates a suite of **quality assurance** tools t
 
 ## Table of Contents
 
+- [Features](#features)
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [Repository structure](#repository-structure)
 
+## Features
+
+This template is based on an **MLOps solution framework** specifically designed **for the development of ML-based healthcare applications**.
+The solution framework covers the following aspects:
+
+- Scoping the ML problem
+- Ensuring the reproducibility of ML pipelines
+- Fostering quality assurance of ML artifacts
+- API development for ML components
+- ML Component Delivery
+- ML component monitoring
+
+At present, the template features cover the first three aspects (see the details below)
+Features covering the remaining aspects will be added in future releases.
+
+### Scoping the ML problem
+
+The template encourages the definition of the ML problem to be solved as the first step in the development of any ML-based healthcare application.
+In particular, in the `docs/` directory, the template includes an outline of the Machine Learning Canvas by Goku Mohandas (see `docs/Machine Learning Canvas.md`). Users are encouraged to start the project by clarifying the ML problem to be solved with all the stakeholders involved, filling in the Machine Learning Canvas.
 
 ## Requirements
 
