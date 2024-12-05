@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"  # Jupyter Notebook
+    volumes:
+      - ./notebooks:/workspace/notebooks  # Persist notebooks
+      - ./scripts:/workspace/scripts      # Persist Python scripts
+      - ./data:/workspace/data            # Persist data
+      - ./models:/workspace/models        # Persist models
+      - ml_cache:/root/.cache             # Persist pip cache and other temp files
+    environment:
+      - PYTHONPATH=/workspace
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    networks:
+      - ml_network
+
+  mlflow:
+    image: python:3.9-slim
+    command: >
+      bash -c "pip install mlflow psycopg2-binary &&
+              mlflow server
+              --host 0.0.0.0
+              --port 5000
+              --backend-store-uri postgresql://mlflow:mlflow@postgres:5432/mlflow
+              --default-artifact-root /mlflow/artifacts"
+    ports:
+      - "5000:5000"  # MLflow UI
+    depends_on:
+      - postgres
+    volumes:
+      - mlflow_data:/mlflow/artifacts
+    environment:
+      - MLFLOW_TRACKING_URI=http://localhost:5000
+    networks:
+      - ml_network
+
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=mlflow
+      - POSTGRES_PASSWORD=mlflow
+      - POSTGRES_DB=mlflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ml_network
+
+volumes:
+  ml_cache:
+  mlflow_data:
+  postgres_data:
+
+networks:
+  ml_network:
+    driver: bridge

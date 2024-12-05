@@ -1,9 +1,24 @@
-mlflow
-dvc
+# Jupyter environment
+jupyter
+jupyterlab
+
+# Code QA
 ruff
 codecarbon
 pytest
 pynblint
 bandit
 mypy
+
+# Data QA
+great_expectations
 deepchecks
+
+# Data versioning
+dvc
+
+# Experiment tracking
+mlflow
+
+# Workflow orchestration
+prefect
